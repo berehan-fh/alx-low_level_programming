@@ -21,14 +21,14 @@ char *_strncat(char *dest, char *src, int n)
 	while (*dest)
 		dest++;
 
-		if (n > srclen)
-			n = srclen;
+	if (n > srclen)
+		n = srclen;
 
-		src = start;
+	src = start;
 
-		for (; i < n; i++)
-			*dest++ = *src++;
+	for (; i < n; i++)
+		*dest++ = *src++;
 
-		*dest = '\0';
-		return (temp);
+	*dest = '\0';
+	return (temp);
 }
