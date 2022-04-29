@@ -1,49 +1,44 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - size
- * @s: pointer to string params
- * Return recursion
+ * _strlen_recursion - returns the length of a string
+ * @s: input string
+ * Return: length of s
  */
 
 int _strlen_recursion(char *s)
 {
 	if (!*s)
-	{
 		return (0);
-	}
 	return (1 + _strlen_recursion(++s));
 }
 
 /**
- * p1 - palindrome
- * @s: pointer to a string
- * @l: position
- * Return: boolean
+ * isPalRec - helper function for is_palindrome
+ * @str: input string
+ * @s: start index
+ * @e: end index
+ * Return: 1 if true, 0 if false
  */
-
-int p1(char *s, int l)
+int isPalRec(char str[], int s, int e)
 {
-	if (l < 1)
-	{
+	if (s == e)
 		return (1);
-	}
-
-	if (*s == *(s + 1))
-	{
-		return (p1(s + 1, l - 2));
-	}
-	return (0);
+	if (str[s] != str[e])
+		return (0);
+	if (s < e + 1)
+		return (isPalRec(str, s + 1, e - 1));
+	return (1);
 }
 
 /**
- * is_palindrome - palindrome
- * @s: pointer to string
- * Return: recursion
+ * is_palindrome - returns 1 if a string is a palindrome and 0 if not
+ * @s: input string
+ * Return: 1 if true, 0 if false
  */
-
 int is_palindrome(char *s)
 {
-	int len = _strlen_recursion(s);
-	return (p1(s, len - 1));
+	int len = _strlen_recursion(s) - 1;
+
+	return (isPalRec(s, 0, len));
 }
