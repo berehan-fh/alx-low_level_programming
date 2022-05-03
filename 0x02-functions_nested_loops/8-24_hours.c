@@ -6,7 +6,7 @@
  */
 void jack_bauer(void)
 {
-	int i, j, k, l, x, y, z;
+	int i, j, k, l, x;
 
 	for (i = '0'; i <= '2'; i++)
 	{
@@ -16,17 +16,9 @@ void jack_bauer(void)
 			x = '9';
 		for (j = '0'; j <= x; j++)
 		{
-			if (i == '2' && j == '3')
-				y = '5';
-			else
-				y = '6';
-			for (k = '0'; k <= y; k++)
+			for (k = '0'; k <= '5'; k++)
 			{
-				if (k == '6')
-					z = '0';
-				else
-					z = '9';
-				for (l = '0'; l <= z; l++)
+				for (l = '0'; l <= '9'; l++)
 				{
 					_putchar(i);
 					_putchar(j);
