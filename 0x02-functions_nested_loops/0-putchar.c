@@ -1,8 +1,9 @@
 #include "main.h"
 
-/*
- * a function that prints -putchar
+/**
+ * main - Entry point
  *
+ * Return: Always 0 on successful exit
  */
 int main(void)
 {
