@@ -24,15 +24,17 @@ void times_table(void)
 				_putchar(digit_2 + '0');
 			}
 			if (j < 9)
+			{
 				_putchar(',');
-			if (i * (j + 1) <= 9)
-			{
-				_putchar(' ');
-				_putchar(' ');
-			}
-			else
-			{
-				_putchar(' ');
+				if (i * (j + 1) <= 9)
+				{
+					_putchar(' ');
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar(' ');
+				}
 			}
 		}
 
